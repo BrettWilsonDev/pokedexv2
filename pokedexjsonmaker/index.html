@@ -8,8 +8,29 @@
         <!-- <link rel="stylesheet" href="assests/scripts/main.css"> -->
         <script defer src="pokedexJsonMaker.js"></script>
     </head>
+    
+    <body >
 
-    <body>
-        <h1>open the console</h1>
+        <div style="margin: 0 auto; width: 90%;">
+
+        <h1>Program used to download a json file <br> generated from multiple pokeapi fetch requests <br> put into one file for speed. <br> made for my personal pokedex<br> Web Project: <a style="text-decoration: none;" href="https://www.atbdw.com/pokedexv2/">pokedexv2</a><br>Home Site: <a style="text-decoration: none;" href="https://www.brettdwilson.com/">brettdwilson</a></h1>
+        <h2>Enter a number up to 905 to limit amount of pokemon generated.</h2>
+
+        <input type="text" id="limit" value="3">
+
+        <button id="btn">click to run</button>
+
+        <div>
+            <p style="font-size: 20px;" id="progresscnt">Progress: waiting to be ran</p>
+            <p style="font-size: 20px;" id="status">Status: waiting to be ran</p>
+
+            <input type="button" id="downloadButton" value="Download the pokedex.json"/>
+
+            <span>or open the console</span>
+
+            <p id="output">Output: waiting to be ran</p>
+            
+        </div>
+    </div>
     </body>
 </html>
