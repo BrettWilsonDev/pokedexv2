@@ -157,7 +157,8 @@ function jsonStringer() {
     
     pokemonArrStringed = (JSON.stringify(mainPokemonArr, null, 2))
 
-    document.getElementById("output").innerHTML = "Output: " + pokemonArrStringed
+    printf("Output: " + pokemonArrStringed)
+    document.getElementById("output").innerHTML = "Output: <br><br>" + pokemonArrStringed
 
     return pokemonArrStringed
 }
