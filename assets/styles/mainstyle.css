@@ -51,7 +51,7 @@ table {
 
 #cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 1rem;
 
 
@@ -61,20 +61,22 @@ table {
   .card {
     display: inline-block;
     display: grid;
-    max-width: 370px;
+    max-width: 570px;
     padding: 1rem;
     border: solid 2px;
     border-radius: 10px;
 
-    height: 400px;
+    height: 500px;
     border-color: #cc2900;
 
     background: linear-gradient(109.6deg,#1b1b4f 11.2%,#78c9f4 100.2%);
+
+    color: #fff;
   }
   
   .card img {
     width: 100%;
-    height: 150px;
+    height: 200px;
     object-fit: contain;
   }
 

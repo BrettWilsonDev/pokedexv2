@@ -8,7 +8,7 @@
         <meta name="keywords" content="Bretts pokedex">
         <!-- <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
         <link rel="stylesheet" href="assets/styles/mainstyle.css">
-        <link rel="preload" href="assets/scripts/main.js" as="script" />
+        <!-- <link rel="preload" href="assets/scripts/main.js" as="script" /> -->
         <script defer src="assets/scripts/main.js"></script>
         <title>pokedex project version 2</title>
 
@@ -28,10 +28,12 @@
                     <span>
                     <label for="sort-input">Sort</label>
                     <select name="sort" id="sort-input">
-                        <option value="idAsc">ID Ascending</option>
-                        <option value="idDesc">ID Descending</option>
-                        <option value="nameAsc">Name Ascending (A-Z)</option>
-                        <option value="nameDesc">Name Descending (Z-A)</option>
+                        <option value="idAsc">Show ID Ascending</option>
+                        <option value="idDesc">Show ID Descending</option>
+                        <option value="nameAsc">Show Ascending (A-Z)</option>
+                        <option value="nameDesc">Show Descending (Z-A)</option>
+                        <option value="list151">Show 151 Pokemon</option>
+                        <option value="list905">Show 905 Pokemon</option>
                     </select>
                     </span>
                 </section>
@@ -51,6 +53,16 @@
                 <p>desc</p>
               </article>
         </section>
+
+        <footer style="text-align: center; height: 50px; color: #fff;">
+            <div>
+                &copy;
+                <span id="footerC">
+                    <script>document.getElementById('footerC').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+                </span>
+                | Made by Brett Wilson
+            </div>
+        </footer>
         </body>
 </html>
 

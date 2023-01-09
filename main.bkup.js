@@ -8,7 +8,7 @@ var sortButtons = document.querySelector('#sort-input')
 
 
 var globalPokedex = []
-var limit = 151
+
 
 function printf(obj ="empty: nothing being printed") {
     console.log(obj);
@@ -25,20 +25,18 @@ async function fetchPokemon() {
 
 function cardMaker(pokemon , limit = 151) {
 
-    // if (limit == 151) {
-    //     pokemon = pokemon.slice(0, 151)
-    // }
-        
+    pokemon = pokemon.slice(0, limit)
+
     // using the standard map function with arrow notation
     const cardElements = pokemon.map(({ id, name, img, desc, types, height, weight}) => `
     <article class="card">
-    <img src="${img}" alt="${name}">
-    <small class="id">ID: ${id}</small>
-    <p class="name">${name[0].toUpperCase() + name.substring(1)}</p>
-    <span class="types">Types: ${types.join(' ').toUpperCase()}</span>
-    <span class="Height">Height: ${height + " cm"}</span>
-    <span class="Weight">Weight: ${weight + " kg"}</span>
-    <p class="desc">${desc}</p>
+      <img src="${img}" alt="${name}">
+      <small class="id">ID: ${id}</small>
+      <p class="name">${name[0].toUpperCase() + name.substring(1)}</p>
+      <span class="types">Types: ${types.join(' ').toUpperCase()}</span>
+      <span class="Height">Height: ${height + " cm"}</span>
+      <span class="Weight">Weight: ${weight + " kg"}</span>
+      <p class="desc">${desc}</p>
     </article>
     `)
 
@@ -86,7 +84,6 @@ sortButtons.addEventListener('change', (event) => {
             break
             case 'list151':
                 limit = 151
-
                 break
             case 'list905':
                 limit = 905
@@ -94,14 +91,12 @@ sortButtons.addEventListener('change', (event) => {
         
         }
 
-    cardMaker(globalPokedex ,limit)
+    cardMaker(globalPokedex)
 })
 
 
 async function main() {
     
-    printf(limit)
-
     let pokemon = await fetchPokemon()
     
     // turn the obj into an arr of values
