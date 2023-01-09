@@ -50,9 +50,12 @@ function cardMaker(pokemon , limit = 151) {
 stringSearch.addEventListener('input', (event) => {
     
     let searchString = event.target.value
+
+    
   
     let filteredPokedex = globalPokedex.filter((pokemon) => {
-        return (pokemon.name.includes(searchString) || pokemon.types.includes(searchString))
+        pokeID = pokemon.id.toString()
+        return (pokemon.name.includes(searchString) || (pokemon.types.includes(searchString)) || (pokeID.includes(searchString)) );
     })
 
     cardMaker(filteredPokedex)
@@ -100,7 +103,7 @@ sortButtons.addEventListener('change', (event) => {
 
 async function main() {
     
-    printf(limit)
+    // printf(limit)
 
     let pokemon = await fetchPokemon()
     
