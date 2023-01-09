@@ -9,41 +9,48 @@
         <!-- <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
         <link rel="stylesheet" href="assets/styles/mainstyle.css">
         <link rel="preload" href="assets/scripts/main.js" as="script" />
-        <title>Brett David Wilson's home page | brettdwilson</title>
+        <script defer src="assets/scripts/main.js"></script>
+        <title>pokedex project version 2</title>
 
-    <body>
-        <span id="welcome"><h1>Welcome to Brett's pokedex site see the pokedex list and cards below.</h1></span>
-        <div id="content-box">
-            <!-- Left Side, display pokemon info -->
-            <div id="pokemon-info">
-                <span id="pokiname"><strong>BULBASAUR</strong></span>
-                <img id="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png">
-                <div id="pokemon-types">
-                    <span class="type-box grass">GRASS</span><span class="type-box poison">POISON</span>
-                </div>
-                <div id="pokemon-description">The seed on its <br> back is filled <br> with nutrients. The seed grows <br> steadily larger as <br> its body grows.</div>
-            </div>
-            <!-- Right side, display pokemon list -->
-            <div id="pokemon-list">
-                <label id="amtlabel">Search by name, id or list by amount.</label>
-                <div class="text-center">
-                    <input type="text" id="textbox"><br>
-                    <button type="button" id="search" class="buttons">Search</button><br>
-                    <button type="button" id="listButton" class="buttons">List</button><br>
-                    <button type="button" id="randomButton"  class="buttons">Random</button><br>
-                    <button type="button" id="clearButton" class="buttons">Clear</button><br>
-                </div>
-                <div class="under-center">
-                    <button type="button" id="searchType" class="buttons">Search type</button><br>
-                    <button type="button" id="sortButton" class="buttons">List Inverse</button><br>
-                    <button type="button" id="sortalphbet" class="buttons">List a-z</button><br>
-                    <button type="button" id="sortalphbetReverse" class="buttons">List z-a</button><br>
-                    <button type="button" id="clearPageButton" class="buttons">Reset</button><br>
-                    <!-- <button type="button" id="test" class="buttons">test</button><br> -->
-                </div>
-            </div>
-        </div>
-        <div id="card">
-        </div>
-    </body>
+
+
+        <header id="header">
+            <nav id="navbar">
+                
+                <h1 style="display: inline-block; font-size: 25px; margin-bottom: 5px; padding: 10px; padding-right: 0;">Brett's Pokedex</h1>
+                <h2 id="secondHeading" style="display: inline-block; font-size: 25px; margin-bottom: 5px; padding: 10px; padding-right: 20px; float: right;">My Website: <a id="webLink" href="https://www.brettdwilson.com/" style="text-decoration: none; color: black;">brettdwilson.com</a></h2>
+                
+                <section id="controls">
+                    <span>
+                    <label for="search-input" style="font-size: 20px; margin-bottom: 5px; padding: 10px;">Search Pokemon</label>
+                    <input type="text" name="search" id="search-input">
+                    </span>
+                    <span>
+                    <label for="sort-input">Sort</label>
+                    <select name="sort" id="sort-input">
+                        <option value="idAsc">ID Ascending</option>
+                        <option value="idDesc">ID Descending</option>
+                        <option value="nameAsc">Name Ascending (A-Z)</option>
+                        <option value="nameDesc">Name Descending (Z-A)</option>
+                    </select>
+                    </span>
+                </section>
+    
+            </nav>
+        </header>
+                
+    <body>        
+        <section id="cards-container">
+            <article class="card">
+                <img src="" alt="">
+                <small>id</small>
+                <p>name</p>
+                <span>types</span>
+                <span>height</span>
+                <span>weight</span>
+                <p>desc</p>
+              </article>
+        </section>
+        </body>
 </html>
+

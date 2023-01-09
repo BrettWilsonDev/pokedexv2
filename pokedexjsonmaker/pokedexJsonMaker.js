@@ -10,6 +10,26 @@ function printf(obj ="empty: nothing being printed") {
     console.log(obj);
 }
 
+
+// function to make sure flavour Text is english
+function flavourTextLangSort(pokemonDesc) {
+
+    let desc
+    let i = 0
+    while (i < 10) {
+        
+        if (pokemonDesc["flavor_text_entries"][i]['language']['name'] == 'en') {
+            desc = (pokemonDesc["flavor_text_entries"][i]["flavor_text"])
+            break
+        }
+
+        i++
+    }
+
+    return desc
+}
+
+
 // function to build a new arr from all the separate json's fetched
 async function buildNewPokemonArr(PokemonTotal, choice) {
 
@@ -42,15 +62,16 @@ async function buildNewPokemonArr(PokemonTotal, choice) {
         let pokemonDesc = await res.json();
 
         // for some reason there be gremlins in the descriptions from pokeapi: U+000c, U+00ad, U+2019, \n, 
-        pokemonDesc = pokemonDesc["flavor_text_entries"][0]["flavor_text"].replaceAll('', ' ').replaceAll('­' , '').replaceAll("’", ',').replaceAll("\n", ' '); 
+        pokemonDesc = (flavourTextLangSort(pokemonDesc).replaceAll('', ' ').replaceAll('­' , '').replaceAll("’", ',').replaceAll("\n", ' '))
 
         // make holders for each pokedex part
         pokemonName = data["name"];
         pokemonID = i;
         pokemonType = data["types"]; // types are needed for the arr len 
         pokemonImg = data["sprites"]["other"]["official-artwork"]["front_default"];
-        pokemonHight = data["height"]
-        pokemonWeight = data["weight"]
+        // pokemonImg = data["sprites"]["other"]["dream_world"]["front_default"];
+        pokemonHight = data["height"];
+        pokemonWeight = data["weight"];
 
         mainPokemonArr[i] = {
             "id"     : pokemonID,
@@ -59,6 +80,7 @@ async function buildNewPokemonArr(PokemonTotal, choice) {
             "weight" : pokemonWeight,
             "types"  : pokemonType, 
             "desc"   : pokemonDesc, 
+            // "desc"   : null, 
             "img"    : pokemonImg, 
         };
 
@@ -113,14 +135,17 @@ async function main(limit = 3, choice = 1) {
 
     typeMaker = await typeArrMaker(mainPokemonArr, limit)
 
+    pokemon = Object.values(mainPokemonArr);
+
     printf(`Type main(limit, choice) with number of pokemon in place of limit and replace choice with 1 or 2 to use the pokeapi url or a backup. Default is limit: ${limit}, choice: ${choice}`)    
 
     printf("Right click and copy object: ")
     printf(mainPokemonArr)
+    printf("or the get the array")
+    printf(pokemon)
 }
 
 
 // _____________________main function call_____________________
 
 main()
-
