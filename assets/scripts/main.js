@@ -36,7 +36,7 @@ function cardMaker(pokemon , limit = 151) {
     <small class="id">ID: ${id}</small>
     <p class="name">${name[0].toUpperCase() + name.substring(1)}</p>
     <span class="types">Types: ${types.join(' ').toUpperCase()}</span>
-    <span class="Height">Height: ${height + " cm"}</span>
+    <span class="Height">Height: ${height * 10 + ".0" + " cm"}</span>
     <span class="Weight">Weight: ${weight + " kg"}</span>
     <p class="desc">${desc}</p>
     </article>
