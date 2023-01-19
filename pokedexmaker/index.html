@@ -3,17 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pokedex</title>
-
-        <!-- <link rel="stylesheet" href="assests/scripts/main.css"> -->
-        <script defer src="pokedexJsonMaker.js"></script>
+        <title>Brett's Pokedex json generator</title>
+        <script defer src="../assets/scripts/pokedexJsonMaker.js"></script>
     </head>
     
-    <body >
+    <body style="display: flex; flex-direction: column; min-height: 98vh;">
+        <div style="flex-grow: 1;">
 
         <div style="margin: 0 auto; width: 90%;">
 
-        <h1>Program used to download a json file <br> generated from multiple pokeapi fetch requests <br> put into one file for speed. <br> made for my personal pokedex<br> Web Project: <a style="text-decoration: none;" href="https://www.atbdw.com/pokedexv2/">pokedexv2</a><br>Home Site: <a style="text-decoration: none;" href="https://www.brettdwilson.com/">brettdwilson</a></h1>
+        <h1>Program made by Brett used to download a json file <br> generated from multiple pokeapi fetch requests <br> put into one file for speed. <br> made for my personal pokedex<br> Web Project: <a style="text-decoration: none;" href="https://www.atbdw.com/pokedexv2/">pokedexv2</a><br>Home Site: <a style="text-decoration: none;" href="https://www.brettdwilson.com/">brettdwilson</a></h1>
         <h2>Enter a number up to 905 to limit amount of pokemon generated.</h2>
 
         <input type="text" id="limit" value="3">
@@ -32,5 +31,17 @@
             
         </div>
     </div>
+
+    </div>
+    <footer style="text-align: center; height: 50px; color: #000;">
+        <div>
+            &copy;
+            <span id="footerC">
+                <script>document.getElementById('footerC').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+            </span>
+            | Made by Brett Wilson
+        </div>
+    </footer>
+
     </body>
 </html>

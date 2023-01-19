@@ -157,7 +157,7 @@ function jsonStringer() {
     
     pokemonArrStringed = (JSON.stringify(mainPokemonArr, null, 2))
 
-    printf("Output: " + pokemonArrStringed)
+    printf("Output: \n\n" + pokemonArrStringed)
     document.getElementById("output").innerHTML = "Output: <br><br>" + pokemonArrStringed
 
     return pokemonArrStringed
@@ -232,7 +232,8 @@ async function main(limit = 3, choice = 1) {
 
     typeMaker = await typeArrMaker(mainPokemonArr, limit)
 
-    printf(jsonStringer())
+    // printf(jsonStringer())
+    jsonStringer()
 
     consoleMessages(mainPokemonArr)
 

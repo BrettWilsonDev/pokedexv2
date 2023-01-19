@@ -32,7 +32,7 @@ function cardMaker(pokemon , limit = 151) {
     // using the standard map function with arrow notation
     const cardElements = pokemon.map(({ id, name, img, desc, types, height, weight}) => `
     <article class="card">
-    <img src="${img}" alt="${name}">
+    <img src="${img}" alt="${name + " official-artwork image"}">
     <small class="id">ID: ${id}</small>
     <p class="name">${name[0].toUpperCase() + name.substring(1)}</p>
     <span class="types">Types: ${types.join(' ').toUpperCase()}</span>

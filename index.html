@@ -8,16 +8,15 @@
         <meta name="keywords" content="Bretts pokedex">
         <!-- <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico"> -->
         <link rel="stylesheet" href="assets/styles/mainstyle.css">
-        <!-- <link rel="preload" href="assets/scripts/main.js" as="script" /> -->
         <script defer src="assets/scripts/main.js"></script>
-        <title>pokedex project version 2</title>
+        <title>Brett's Pokedex Version Two</title>
 
 
 
         <header id="header">
             <nav id="navbar">
                 
-                <h1 style="display: inline-block; font-size: 22px; margin-bottom: 5px; padding: 10px; padding-right: 0;">Brett's Pokedex</h1>
+                <h1 style="display: inline-block; font-size: 23px; margin-bottom: 5px; padding: 10px; padding-right: 0;">Brett's Pokedex</h1>
                 <h2 id="secondHeading" style="display: inline-block; font-size: 22px; margin-bottom: 5px; padding: 10px; padding-right: 20px; float: right;"><a id="webLink" href="https://www.brettdwilson.com/" style="text-decoration: none; color: black;">brettdwilson.com</a></h2>
                 
                 <section id="controls">
@@ -41,21 +40,24 @@
             </nav>
         </header>
                 
-    <body>        
+    <body style="display: flex; flex-direction: column; min-height: 98vh;"> 
+        <div style="flex-grow: 1;">       
         <section id="cards-container">
             <article class="card">
                 <img src="" alt="">
-                <small>id</small>
-                <p>name</p>
-                <span>types</span>
-                <span>height</span>
-                <span>weight</span>
-                <p>desc</p>
+                <small>id: please wait</small>
+                <p>name: please wait</p>
+                <span>types: please wait</span>
+                <span>height: please wait</span>
+                <span>weight: please wait</span>
+                <p>desc: please wait</p>
               </article>
         </section>
 
+    </div>
         <footer style="text-align: center; height: 50px; color: #fff;">
             <div>
+                <p style="padding-bottom: 8px;">Brett's <a style="color: #fff;" href="pokedexmaker/">Pokedex Maker</a> used for this project.</p>
                 &copy;
                 <span id="footerC">
                     <script>document.getElementById('footerC').appendChild(document.createTextNode(new Date().getFullYear()))</script>
