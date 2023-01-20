@@ -211,7 +211,7 @@ btn.addEventListener('click', event => {
     Number(limit)
     limit = Math.abs(limit) 
 
-    if (limit >= 905) {
+    if (limit > 905) {
         document.getElementById("status").innerHTML = `Status: please use numbers below 905`
     } else {
         main(limit)
