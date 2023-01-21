@@ -166,19 +166,6 @@ footer div p a {
   color: #fff;
 }
 
-/* header {
-  top:0;
-  padding-top:0;
-  position:relative;
-  margin:0;
-} */
-
-
-/* @media only screen and (max-width: 505px) {
-  #secondHeading {
-    visibility: hidden;
-  }
-} */
 
 @media only screen and (max-width: 505px) {
   #webLink {
