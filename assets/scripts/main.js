@@ -19,7 +19,7 @@ function printf(obj ="empty: nothing being printed") {
 
 async function fetchPokemon() {
 
-    let response = await fetch(`assets/jsons/pokedexGenerated.json`);
+    let response = await fetch(`assets/jsons/pokedexAll.json`);
     let data = await response.json()
 
     return data
