@@ -7,8 +7,8 @@
         <meta name="description" content="pokedex project by Brett Wilson">
         <meta name="keywords" content="Bretts pokedex">
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-        <link rel="stylesheet" href="assets/styles/mainstyle.css">
-        <script defer src="assets/scripts/main.js"></script>
+        <link rel="stylesheet" href="assets/styles/mainstyle.min.css">
+        <script defer src="assets/scripts/main.min.js"></script>
         <title>Brett's Pokedex Version Two</title>
 
 
@@ -16,16 +16,16 @@
         <header id="header">
             <nav id="navbar">
                 
-                <h1 style="display: inline-block; font-size: 23px; margin-bottom: 5px; padding: 10px; padding-right: 0;">Brett's Pokedex</h1>
-                <h2 id="secondHeading" style="display: inline-block; font-size: 22px; margin-bottom: 5px; padding: 10px; padding-right: 20px; float: right;"><a id="webLink" href="https://www.brettdwilson.com/" style="text-decoration: none; color: black;">brettdwilson.com</a></h2>
+                <h1>Brett's Pokedex</h1>
+                <h2 id="secondHeading"><a id="webLink" href="https://www.brettdwilson.com/">brettdwilson.com</a></h2>
                 
                 <section id="controls">
                     <span>
-                    <label for="search-input" style="font-size: 20px; margin-bottom: 5px; padding: 10px;">Search Pokemon</label>
+                    <label id="searchLabel" for="search-input">Search Pokemon</label>
                     <input type="text" name="search" id="search-input">
                     </span>
                     <span>
-                    <label for="sort-input">Sort</label>
+                    <label style="color: whitesmoke;" for="sort-input">Sort</label>
                     <select name="sort" id="sort-input">
                         <option value="idAsc">Show ID Ascending</option>
                         <option value="idDesc">Show ID Descending</option>
@@ -40,7 +40,7 @@
             </nav>
         </header>
                 
-    <body style="display: flex; flex-direction: column; min-height: 98vh;"> 
+    <body id="bodyCards"> 
         <div style="flex-grow: 1;">       
         <section id="cards-container">
             <article class="card">
@@ -55,9 +55,9 @@
         </section>
 
     </div>
-        <footer style="text-align: center; height: 50px; color: #fff;">
+        <footer>
             <div>
-                <p style="padding-bottom: 8px;">Brett's <a style="color: #fff;" href="pokedexmaker/">Pokedex Maker</a> used for this project.</p>
+                <p>Brett's <a href="pokedexmaker/">Pokedex Maker</a> used for this project.</p>
                 &copy;
                 <span id="footerC">
                     <script>document.getElementById('footerC').appendChild(document.createTextNode(new Date().getFullYear()))</script>

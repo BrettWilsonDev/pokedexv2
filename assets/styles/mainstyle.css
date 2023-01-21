@@ -109,6 +109,63 @@ body {
 
 }
 
+
+h1 {
+  display: inline-block; 
+  font-size: 23px; 
+  margin-bottom: 5px; 
+  padding: 10px; 
+  padding-right: 0;
+  color: whitesmoke;
+}
+
+h2 {
+  display: inline-block; 
+  font-size: 22px; 
+  margin-bottom: 5px; 
+  padding: 10px; 
+  padding-right: 
+  20px; 
+  float: right;
+  color: whitesmoke;
+}
+
+h2 a {
+
+  text-decoration: none; 
+  color: whitesmoke;
+}
+
+#searchLabel {
+  font-size: 20px; 
+  margin-bottom: 5px; 
+  padding: 10px;
+  color: whitesmoke;
+}
+
+#bodyCards {
+
+  display: flex; 
+  flex-direction: column; 
+  min-height: 98vh;
+}
+
+footer {
+
+  text-align: center; 
+  height: 50px; 
+  color: #fff;
+}
+
+footer div p {
+  padding-bottom: 8px;
+  
+}
+
+footer div p a {
+  color: #fff;
+}
+
 /* header {
   top:0;
   padding-top:0;
