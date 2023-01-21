@@ -84,8 +84,24 @@ sortButtons.addEventListener('change', (event) => {
                 return 0
             })
             break
+            case 'typeAsc':
+            globalPokedex.sort((pokemonA, pokemonB) => {
+                if (pokemonA.types < pokemonB.types) return -1
+                if (pokemonA.types > pokemonB.types) return 1
+                return 0
+            })
+            break
+            case 'typeDesc':
+            globalPokedex.sort((pokemonA, pokemonB) => {
+                if (pokemonA.types > pokemonB.types) return -1
+                if (pokemonA.types < pokemonB.types) return 1
+                return 0
+            })
+            break
         
         }
+
+    // printf(globalPokedex[1].types)
 
     cardMaker(globalPokedex)
 })
