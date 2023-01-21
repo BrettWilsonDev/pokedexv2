@@ -51,7 +51,7 @@ stringSearch.addEventListener('input', (event) => {
 
     let filteredPokedex = globalPokedex.filter((pokemon) => {
         pokeID = pokemon.id.toString()
-        return (pokemon.name.includes(searchString) || (pokemon.types.includes(searchString)) || (pokeID.includes(searchString)) );
+        return (pokemon.name.includes(searchString) || (pokemon.types.includes(searchString)) || (pokemon.type0.includes(searchString)) || (pokeID.includes(searchString)) );
     })
 
     cardMaker(filteredPokedex)
