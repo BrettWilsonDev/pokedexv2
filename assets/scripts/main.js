@@ -7,27 +7,22 @@ var pokemonCards = document.querySelector('#cards-container')
 var stringSearch = document.querySelector('#search-input')
 var sortButtons = document.querySelector('#sort-input')
 
-
 var globalPokedex = []
 
 
 function printf(obj ="empty: nothing being printed") {
-
     console.log(obj);
 }
 
 
 async function fetchPokemon() {
-
     let response = await fetch(`assets/jsons/pokedexAll.json`);
     let data = await response.json()
-
     return data
 }
 
 
 function cardMaker(pokemon) {
-        
     // using the standard map function with arrow notation
     const cardElements = pokemon.map(({ id, name, img, desc, types, height, weight}) => `
     <article class="card">
@@ -47,7 +42,6 @@ function cardMaker(pokemon) {
 
 // search by name string 
 stringSearch.addEventListener('input', (event) => {
-    
     let searchString = event.target.value
 
     let filteredPokedex = globalPokedex.filter((pokemon) => {
@@ -61,7 +55,6 @@ stringSearch.addEventListener('input', (event) => {
 
 // sort function
 sortButtons.addEventListener('change', (event) => {
-
     const sortBy = event.target.value;
   
     switch (sortBy) {
@@ -99,23 +92,18 @@ sortButtons.addEventListener('change', (event) => {
                 return 0
             })
             break
-        
         }
-
-    // printf(globalPokedex[1].types)
 
     cardMaker(globalPokedex)
 })
 
 
 async function main() {
-    
     let pokemon = await fetchPokemon()
     
     // turn the obj into an arr of values
     pokemon = Object.values(pokemon);
     globalPokedex = pokemon
-    
     cardMaker(pokemon)
 }
 
