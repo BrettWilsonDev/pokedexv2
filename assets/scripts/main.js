@@ -10,7 +10,7 @@ var sortButtons = document.querySelector('#sort-input')
 var globalPokedex = []
 
 
-function printf(obj ="empty: nothing being printed") {
+function printf(obj = "empty: nothing being printed") {
     console.log(obj);
 }
 
@@ -24,7 +24,7 @@ async function fetchPokemon() {
 
 function cardMaker(pokemon) {
     // using the standard map function with arrow notation
-    const cardElements = pokemon.map(({ id, name, img, desc, types, height, weight}) => `
+    const cardElements = pokemon.map(({ id, name, img, desc, types, height, weight }) => `
     <article class="card">
     <img src="${img}" alt="${name + " official-artwork image"}">
     <small class="id">ID: ${id}</small>
@@ -46,7 +46,7 @@ stringSearch.addEventListener('input', (event) => {
 
     let filteredPokedex = globalPokedex.filter((pokemon) => {
         pokeID = pokemon.id.toString()
-        return (pokemon.name.includes(searchString) || (pokemon.types.includes(searchString)) || (pokemon.type0.includes(searchString)) || (pokeID.includes(searchString)) );
+        return (pokemon.name.includes(searchString) || (pokemon.types.includes(searchString)) || (pokemon.type0.includes(searchString)) || (pokeID.includes(searchString)));
     })
 
     cardMaker(filteredPokedex)
@@ -56,43 +56,43 @@ stringSearch.addEventListener('input', (event) => {
 // sort function
 sortButtons.addEventListener('change', (event) => {
     const sortBy = event.target.value;
-  
+
     switch (sortBy) {
-            case 'idAsc':
+        case 'idAsc':
             globalPokedex.sort((pokemonA, pokemonB) => pokemonA.id - pokemonB.id)
             break
-            case 'idDesc':
+        case 'idDesc':
             globalPokedex.sort((pokemonA, pokemonB) => pokemonB.id - pokemonA.id)
             break
-            case 'nameAsc':
+        case 'nameAsc':
             globalPokedex.sort((pokemonA, pokemonB) => {
                 if (pokemonA.name < pokemonB.name) return -1
                 if (pokemonA.name > pokemonB.name) return 1
                 return 0
             })
             break
-            case 'nameDesc':
+        case 'nameDesc':
             globalPokedex.sort((pokemonA, pokemonB) => {
                 if (pokemonA.name > pokemonB.name) return -1
                 if (pokemonA.name < pokemonB.name) return 1
                 return 0
             })
             break
-            case 'typeAsc':
+        case 'typeAsc':
             globalPokedex.sort((pokemonA, pokemonB) => {
                 if (pokemonA.types < pokemonB.types) return -1
                 if (pokemonA.types > pokemonB.types) return 1
                 return 0
             })
             break
-            case 'typeDesc':
+        case 'typeDesc':
             globalPokedex.sort((pokemonA, pokemonB) => {
                 if (pokemonA.types > pokemonB.types) return -1
                 if (pokemonA.types < pokemonB.types) return 1
                 return 0
             })
             break
-        }
+    }
 
     cardMaker(globalPokedex)
 })
@@ -100,7 +100,7 @@ sortButtons.addEventListener('change', (event) => {
 
 async function main() {
     let pokemon = await fetchPokemon()
-    
+
     // turn the obj into an arr of values
     pokemon = Object.values(pokemon);
     globalPokedex = pokemon

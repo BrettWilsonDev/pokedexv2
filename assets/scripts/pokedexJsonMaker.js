@@ -6,7 +6,7 @@
 var mainPokemonArr = {}
 
 // function to skip typing out console.log(obj) the whole time
-function printf(obj ="empty: nothing being printed") {
+function printf(obj = "empty: nothing being printed") {
     console.log(obj)
 }
 
@@ -17,7 +17,7 @@ function flavourTextLangSort(pokemonDesc) {
     let i = 0
 
     while (i < 10) {
-        
+
         if (pokemonDesc["flavor_text_entries"][i]['language']['name'] == 'en') {
             desc = (pokemonDesc["flavor_text_entries"][i]["flavor_text"])
             break
@@ -45,7 +45,7 @@ async function buildNewPokemonArr(PokemonTotal, choice) {
     } else {
         printf("please choose 1 or 2")
     }
-    
+
     printf(`URL being used: ${url}`)
 
     let i = 1
@@ -59,7 +59,7 @@ async function buildNewPokemonArr(PokemonTotal, choice) {
         let pokemonDesc = await res.json()
 
         // for some reason there be gremlins in the descriptions from pokeapi: U+000c, U+00ad, U+2019, \n, 
-        pokemonDesc = (flavourTextLangSort(pokemonDesc).replaceAll('', ' ').replaceAll('­' , '').replaceAll("’", ',').replaceAll("\n", ' '))
+        pokemonDesc = (flavourTextLangSort(pokemonDesc).replaceAll('', ' ').replaceAll('­', '').replaceAll("’", ',').replaceAll("\n", ' '))
 
         // make holders for each pokedex part
         pokemonName = data["name"]
@@ -71,16 +71,16 @@ async function buildNewPokemonArr(PokemonTotal, choice) {
         pokemonWeight = data["weight"]
 
         mainPokemonArr[i] = {
-            "id"     : pokemonID,
-            "name"   : pokemonName,
-            "height" : pokemonHight,
-            "weight" : pokemonWeight,
-            "types"  : pokemonType, 
-            "desc"   : pokemonDesc, 
-            "img"    : pokemonImg, 
+            "id": pokemonID,
+            "name": pokemonName,
+            "height": pokemonHight,
+            "weight": pokemonWeight,
+            "types": pokemonType,
+            "desc": pokemonDesc,
+            "img": pokemonImg,
         }
 
-        document.getElementById("progresscnt").innerHTML = `Progress: ${i} out of ${PokemonTotal}` 
+        document.getElementById("progresscnt").innerHTML = `Progress: ${i} out of ${PokemonTotal}`
 
         i++
     }
@@ -94,7 +94,7 @@ function typeArrMaker(mainPokemonArr, limit) {
     j = 0
     let pokemonTypeArr = []
 
-    while (i <= limit){
+    while (i <= limit) {
         let pokemonType = mainPokemonArr[i]["types"]
         arrLen = pokemonType.length
 
@@ -112,7 +112,7 @@ function typeArrMaker(mainPokemonArr, limit) {
         // types are replaced by this new simple arr
         mainPokemonArr[i]["types"] = pokemonTypeArr
 
-        i++  
+        i++
     }
 }
 
@@ -121,7 +121,7 @@ function typeArrMaker(mainPokemonArr, limit) {
 function consoleMessages(mainPokemonArr) {
     pokemon = Object.values(mainPokemonArr)
 
-    printf(`Type main(limit, choice) with number of pokemon in place of limit and replace choice with 1 or 2 to use the pokeapi url or a backup. Default is limit: ${limit = 3}, choice: ${choice = 1}`)    
+    printf(`Type main(limit, choice) with number of pokemon in place of limit and replace choice with 1 or 2 to use the pokeapi url or a backup. Default is limit: ${limit = 3}, choice: ${choice = 1}`)
     printf("Right click and copy object: ")
     printf(mainPokemonArr)
     printf("or the get the array")
@@ -129,7 +129,7 @@ function consoleMessages(mainPokemonArr) {
 
     if (pokemon.length == 0) {
         document.getElementById("status").innerHTML = `Status: failed please make sure the input is a number`
-        document.getElementById("progresscnt").innerHTML = `Progress: failed to run` 
+        document.getElementById("progresscnt").innerHTML = `Progress: failed to run`
     } else {
         document.getElementById("status").innerHTML = `Status: Done`
     }
@@ -148,42 +148,42 @@ function jsonStringer() {
 // function to download the arr as a json
 function download(filename, text) {
     var element = document.createElement('a');
-    
+
     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
     element.setAttribute('download', filename);
     element.style.display = 'none';
-    
+
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
-    }
+}
 
 
 // part of the download function
-document.getElementById("downloadButton").addEventListener("click", function(){
-        var text = jsonStringer();
-        var filename = "pokedex.json";
-        
-        testString = jsonStringer().toString()
-        compareString = "{}"
-        compareString.toString()
+document.getElementById("downloadButton").addEventListener("click", function () {
+    var text = jsonStringer();
+    var filename = "pokedex.json";
 
-        // used to make sure the arr is not empty 
-        if (testString === compareString) {
-            document.getElementById("status").innerHTML = `Status: Please click run first`
-        } else {
-            download(filename, text);
-        }
-    }, false);
+    testString = jsonStringer().toString()
+    compareString = "{}"
+    compareString.toString()
+
+    // used to make sure the arr is not empty 
+    if (testString === compareString) {
+        document.getElementById("status").innerHTML = `Status: Please click run first`
+    } else {
+        download(filename, text);
+    }
+}, false);
 
 
 // function to call main through a dom button part of main
 let btn = document.getElementById("btn")
 btn.addEventListener('click', event => {
     let limit = document.getElementById("limit").value
-    
+
     Number(limit)
-    limit = Math.abs(limit) 
+    limit = Math.abs(limit)
 
     if (limit > 905) {
         document.getElementById("status").innerHTML = `Status: please use numbers below 905`
