@@ -8,5 +8,5 @@ In order to speed up the display of the cards by a whole lot I made a separate p
 all the needed information from all the fetch requests sent to the pokiapi while adding them all together in a single
 json file. 
 
-Link to pokedex json builder : https://brettwilsonbdw.github.io/pokedexv2/pokedexmaker/
+Link to pokedex json builder : https://brettwilsondev.github.io/pokedexv2/pokedexmaker/
 
